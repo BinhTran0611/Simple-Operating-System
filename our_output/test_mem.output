@@ -1,0 +1,94 @@
+==================
+Time slot   0
+ld_routine
+	Loaded a process at input/proc/m2s, PID: 1 PRIO: 0
+	CPU 0: Dispatched process  1
+allocate region=200 reg=0
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 256
+00000000: 80000000
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[200->256]
+
+==================
+Time slot   1
+allocate region=200 reg=1
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000000
+00000001: 80000001
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[200->256]
+rg[456->512]
+
+==================
+Time slot   2
+	CPU 0: Put process  1 to run queue
+	CPU 0: Dispatched process  1
+write region=0 offset=13 value=12
+------RAM CONTENT------
+0x0000000d: 0000000c
+
+==================
+Time slot   3
+write region=1 offset=11 value=11
+------RAM CONTENT------
+0x0000000d: 0000000c
+0x0000010b: 0000000b
+
+==================
+Time slot   4
+	CPU 0: Put process  1 to run queue
+	CPU 0: Dispatched process  1
+read region=0 offset=13 value=12
+==================
+Time slot   5
+read region=1 offset=11 value=11
+==================
+Time slot   6
+	CPU 0: Put process  1 to run queue
+	CPU 0: Dispatched process  1
+write region=0 offset=0 value=13
+------RAM CONTENT------
+0x00000000: 0000000d
+0x0000000d: 0000000c
+0x0000010b: 0000000b
+
+==================
+Time slot   7
+read region=0 offset=0 value=13
+==================
+Time slot   8
+	CPU 0: Put process  1 to run queue
+	CPU 0: Dispatched process  1
+free reg=0
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000000
+00000001: 80000001
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[0->256]
+rg[456->512]
+
+==================
+Time slot   9
+free reg=1
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000000
+00000001: 80000001
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[0->512]
+
+==================
+Time slot  10
+	CPU 0: Processed  1 has finished
+	CPU 0 stopped

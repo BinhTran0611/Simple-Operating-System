@@ -1,0 +1,359 @@
+==================
+Time slot   0
+ld_routine
+==================
+Time slot   1
+	Loaded a process at input/proc/p0s, PID: 1 PRIO: 130
+	CPU 3: Dispatched process  1
+==================
+Time slot   2
+	Loaded a process at input/proc/s3, PID: 2 PRIO: 39
+	CPU 2: Dispatched process  2
+allocate region=300 reg=0
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000000
+00000001: 80000001
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[300->512]
+
+==================
+Time slot   3
+	CPU 3: Put process  1 to run queue
+	CPU 3: Dispatched process  1
+allocate region=300 reg=4
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 1024
+00000000: 80000000
+00000001: 80000001
+00000002: 80000002
+00000003: 80000003
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[300->512]
+rg[812->1024]
+
+==================
+Time slot   4
+	Loaded a process at input/proc/m1s, PID: 3 PRIO: 15
+free reg=0
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 1024
+00000000: 80000000
+00000001: 80000001
+00000002: 80000002
+00000003: 80000003
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[0->512]
+rg[812->1024]
+
+	CPU 2: Put process  2 to run queue
+	CPU 2: Dispatched process  3
+allocate region=300 reg=0
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000004
+00000001: 80000005
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[300->512]
+
+==================
+Time slot   5
+	CPU 1: Dispatched process  2
+allocate region=100 reg=1
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000004
+00000001: 80000005
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[400->512]
+
+	CPU 3: Put process  1 to run queue
+	CPU 3: Dispatched process  1
+allocate region=100 reg=1
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 1024
+00000000: 80000000
+00000001: 80000001
+00000002: 80000002
+00000003: 80000003
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[100->512]
+rg[812->1024]
+
+==================
+Time slot   6
+	CPU 2: Put process  3 to run queue
+	CPU 2: Dispatched process  3
+free reg=0
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000004
+00000001: 80000005
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[0->300]
+rg[400->512]
+
+write region=1 offset=20 value=100
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 1024
+00000000: 80000000
+00000001: 80000001
+00000002: 80000002
+00000003: 80000003
+
+------RAM CONTENT------
+0x00000014: 00000064
+	Loaded a process at input/proc/s2, PID: 4 PRIO: 120
+
+==================
+Time slot   7
+	CPU 1: Put process  2 to run queue
+	CPU 1: Dispatched process  2
+allocate region=100 reg=2
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000004
+00000001: 80000005
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[100->300]
+rg[400->512]
+
+	CPU 3: Put process  1 to run queue
+	CPU 3: Dispatched process  4
+	CPU 0: Dispatched process  1
+read region=1 offset=20 value=100
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 1024
+00000000: 80000000
+00000001: 80000001
+00000002: 80000002
+00000003: 80000003
+
+	Loaded a process at input/proc/m0s, PID: 5 PRIO: 120
+==================
+Time slot   8
+writing error: not allocated or out of region range
+	CPU 2: Put process  3 to run queue
+	CPU 2: Dispatched process  3
+free reg=2
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000004
+00000001: 80000005
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[0->300]
+rg[400->512]
+
+==================
+Time slot   9
+	CPU 1: Put process  2 to run queue
+	CPU 1: Dispatched process  2
+free reg=1
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000004
+00000001: 80000005
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[0->512]
+
+	CPU 3: Put process  4 to run queue
+	CPU 3: Dispatched process  5
+allocate region=300 reg=0
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000006
+00000001: 80000007
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[300->512]
+
+	CPU 0: Put process  1 to run queue
+	CPU 0: Dispatched process  4
+	Loaded a process at input/proc/p1s, PID: 6 PRIO: 15
+==================
+Time slot  10
+	CPU 2: Processed  3 has finished
+	CPU 2: Dispatched process  1
+reading error: not allocated or out of region range
+allocate region=100 reg=1
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000006
+00000001: 80000007
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[400->512]
+
+==================
+Time slot  11
+	CPU 1: Put process  2 to run queue
+	CPU 1: Dispatched process  6
+	CPU 0: Put process  4 to run queue
+	CPU 0: Dispatched process  2
+	Loaded a process at input/proc/s0, PID: 7 PRIO: 38
+writing error: not allocated or out of region range
+	CPU 3: Put process  5 to run queue
+	CPU 3: Dispatched process  4
+	CPU 2: Put process  1 to run queue
+	CPU 2: Dispatched process  5
+free reg=0
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000006
+00000001: 80000007
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[0->300]
+rg[400->512]
+
+==================
+Time slot  12
+==================
+Time slot  13
+	CPU 1: Put process  6 to run queue
+	CPU 1: Dispatched process  1
+reading error: not allocated or out of region range
+	CPU 0: Put process  2 to run queue
+	CPU 0: Dispatched process  6
+	CPU 3: Put process  4 to run queue
+	CPU 3: Dispatched process  7
+allocate region=100 reg=2
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000006
+00000001: 80000007
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[100->300]
+rg[400->512]
+
+==================
+Time slot  14
+	CPU 2: Put process  5 to run queue
+	CPU 2: Dispatched process  2
+==================
+Time slot  15
+	CPU 1: Put process  1 to run queue
+	CPU 1: Dispatched process  4
+	CPU 0: Put process  6 to run queue
+	CPU 0: Dispatched process  5
+write region=1 offset=20 value=102
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 512
+00000000: 80000006
+00000001: 80000007
+
+------RAM CONTENT------
+0x00000014: 00000064
+0x00000740: 00000066
+
+	CPU 2: Processed  2 has finished
+	CPU 2: Dispatched process  1
+free reg=4
+------PAGE TABLE CONTENT------
+print_pgtbl: 0 - 1024
+00000000: 80000000
+00000001: 80000001
+00000002: 80000002
+00000003: 80000003
+
+------FREE REGION CONTENT------
+print_list_rg: 
+rg[100->1024]
+
+	CPU 3: Put process  7 to run queue
+	CPU 3: Dispatched process  6
+==================
+Time slot  16
+	Loaded a process at input/proc/s1, PID: 8 PRIO: 0
+writing error: not allocated or out of region range
+	CPU 3: Put process  6 to run queue
+	CPU 3: Dispatched process  6
+	CPU 2: Processed  1 has finished
+	CPU 2: Dispatched process  7
+==================
+Time slot  17
+	CPU 0: Processed  5 has finished
+	CPU 0: Dispatched process  8
+	CPU 1: Put process  4 to run queue
+	CPU 1: Dispatched process  4
+==================
+Time slot  18
+==================
+Time slot  19
+	CPU 0: Put process  8 to run queue
+	CPU 0: Dispatched process  8
+	CPU 2: Put process  7 to run queue
+	CPU 2: Dispatched process  7
+	CPU 3: Put process  6 to run queue
+	CPU 3: Dispatched process  6
+	CPU 1: Put process  4 to run queue
+	CPU 1: Dispatched process  4
+==================
+Time slot  20
+	CPU 3: Processed  6 has finished
+	CPU 3 stopped
+	CPU 1: Processed  4 has finished
+	CPU 1 stopped
+	CPU 2: Put process  7 to run queue
+	CPU 2: Dispatched process  7
+==================
+Time slot  21
+	CPU 0: Put process  8 to run queue
+	CPU 0: Dispatched process  8
+==================
+Time slot  22
+==================
+Time slot  23
+	CPU 0: Put process  8 to run queue
+	CPU 0: Dispatched process  8
+	CPU 2: Put process  7 to run queue
+	CPU 2: Dispatched process  7
+==================
+Time slot  24
+	CPU 0: Processed  8 has finished
+	CPU 0 stopped
+==================
+Time slot  25
+	CPU 2: Put process  7 to run queue
+	CPU 2: Dispatched process  7
+==================
+Time slot  26
+==================
+Time slot  27
+	CPU 2: Put process  7 to run queue
+	CPU 2: Dispatched process  7
+==================
+Time slot  28
+==================
+Time slot  29
+	CPU 2: Put process  7 to run queue
+	CPU 2: Dispatched process  7
+==================
+Time slot  30
+	CPU 2: Processed  7 has finished
+	CPU 2 stopped

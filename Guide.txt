@@ -1,0 +1,6 @@
+- Các cài đặt bật tắt MLQ_SCHED và MM_PAGING được chuyển sang file control.h để dễ dàng điều chỉnh.
+- Các cài đặt về IO khi thực hiện các lệnh được đặt ở file os-cfg.h với các ý nghĩa như sau:
++ IO_DUMP: Cho phép in ra sau khi thực hiện lệnh
++ PAGETBL_DUMP: In ra page table
++ MEM_DUMP: In ra tình trạng của RAM
++ REG_DUMP: In ra danh sách các free region
